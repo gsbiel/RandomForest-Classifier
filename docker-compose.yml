@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  first.randomforest.job:
+    container_name: first.randomforest.job
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes:
+      - ./scripts:/usr/src/app/scripts
+    ports:
+      - '8889:8080'
+    environment:
+      - INPUT_DATASET_FILENAME=locations_to_be_labeled.csv
